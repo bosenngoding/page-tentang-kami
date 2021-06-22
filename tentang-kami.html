@@ -1,0 +1,840 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <!-- Link AOS (ANIMATE ON SCROLL) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+    <!-- CSS -->
+    <style>
+        @import "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,100;1,600;1,700&family=Quicksand:wght@300;400;500;600;700";
+
+        :root {
+            --main-color: #15477a;
+            --secondary-color: rgb(255, 255, 1);
+            --third-color: rgb(255, 255, 255);
+            --fourth-color: rgb(0, 0, 0);
+
+            --main-font: 'Montserrat', sans-serif;
+            --secondary-font: 'Quicksand', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 3000px;
+        }
+
+        /* Header & Navbar */
+
+        .navbar {
+            background-color: var(--main-color);
+            border-bottom: 2px solid var(--secondary-color);
+            z-index: 9999;
+        }
+
+        .navbar-brand {
+            font-family: var(--main-font);
+            font-weight: 600;
+        }
+
+        .navbar-nav {
+            font-family: var(--secondary-font);
+            font-weight: 500;
+        }
+
+        .dropdown-menu {
+            background-color: var(--main-color);
+        }
+
+        .dropdown-item {
+            color: var(--third-color);
+        }
+
+
+
+        /* TOmbol Samping*/
+        .sticky-icons {
+            position: fixed;
+            right: -161px;
+            top: 25%;
+            z-index: 999;
+        }
+
+        .sticky-icons li {
+            display: block;
+        }
+
+        .sticky-icons a {
+            position: relative;
+            display: flex;
+            justify-content: flex-start;
+            align-items: stretch;
+            text-decoration: none;
+            box-shadow: 0 0 7px rgba(0, 0, 0, .1);
+            background-color: var(--secondary-color);
+            color: var(--main-color);
+            border: 1px solid var(--secondary-color);
+        }
+
+        .sticky-icons .text {
+            font-family: var(--secondary-font);
+            font-size: 16px;
+        }
+
+        .sticky-icons:hover {
+            transition: 1s;
+            transform: translateX(-155px);
+        }
+
+        .icon {
+            width: 55px;
+            min-height: 50px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--main-color);
+            color: var(--third-color);
+            padding: 5px;
+        }
+
+        .text {
+            padding: 10px 15px;
+            font-weight: bold;
+            font-size: 1rem;
+            line-height: normal;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        /* Visi & Misi */
+        .container .judul-dark h1 {
+            font-family: var(--main-font);
+            color: var(--main-color);
+            font-size: 28px;
+            font-weight: bold;
+            border-bottom: 2px solid var(--secondary-color);
+            width: 45%;
+            margin: auto;
+        }
+
+        #visi-misi {
+            color: var(--main-color);
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .container h5 {
+            font-family: var(--secondary-font);
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .border-visi-misi {
+            width: 90%;
+            margin: auto;
+            border: 4px solid var(--main-color);
+            border-radius: 40px 0 40px 0;
+            padding: 30px;
+        }
+
+        /* Sejarah */
+        #sejarah {
+            background-color: var(--main-color);
+            height: 1100px;
+            color: var(--third-color);
+        }
+
+        .container .judul-dark-1 h1 {
+            font-family: var(--main-font);
+            border-bottom: 2px solid var(--secondary-color);
+            width: 35%;
+            font-weight: bold;
+            font-size: 32px;
+        }
+
+        /* Arti logo */
+        .logo-markus {
+            margin: auto;
+            margin-top: 10px;
+            width: 75%;
+        }
+
+        .logo-markus img {
+            width: 100%;
+        }
+
+        .info {
+            margin: auto;
+        }
+
+        .info ul li {
+            margin-top: 10px;
+            list-style-type: '~';
+            font-family: var(--secondary-font);
+            color: var(--main-color);
+            font-weight: 500;
+
+        }
+
+        /* Kata Pengantar */
+        #kata-pengantar {
+            background-color: var(--main-color);
+            color: var(--third-color);
+            font-family: var(--main-font);
+            font-size: 16px;
+            border-top: 2px solid var(--secondary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            margin-top: 50px;
+        }
+
+        /* Fasilitas */
+        #fasilitas h1,
+        h6 {
+            color: var(--main-color);
+        }
+
+        .card {
+            margin: auto;
+        }
+
+        .card-body h6 {
+            font-family: var(--secondary-font);
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--main-color);
+            color: var(--third-color);
+            font-family: var(--secondary-font);
+            margin-top: 40px;
+        }
+
+        .top-footer {
+            display: flex;
+            align-items: center;
+            margin-top: 18px;
+            justify-content: center;
+        }
+
+        .top-footer img {
+            width: 100px;
+            margin-right: 10px;
+        }
+
+        .top-footer h3 {
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .contact {
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact h6 {
+            font-weight: 300;
+            font-size: 14px;
+
+            color: var(--third-color);
+        }
+
+        .contact span {
+            font-weight: bold;
+            font-size: 14px;
+
+            color: var(--third-color);
+        }
+
+        .link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .link-terkait {
+            margin-right: 20%;
+        }
+
+        .link-terkait h6 {
+            font-weight: bold;
+        }
+
+        .link-terkait a {
+            text-decoration: transparent;
+            color: var(--third-color);
+        }
+
+        .link-terkait a:hover {
+            color: var(--main-color);
+            text-shadow: 1px 1px 1px var(--secondary-color);
+        }
+
+        .link-terkait ul {
+            list-style-type: '> ';
+        }
+
+        .link-pendukung h6 {
+            font-weight: bold;
+        }
+
+        .link-pendukung a {
+            text-decoration: transparent;
+            color: var(--third-color);
+        }
+
+        .link-pendukung a:hover {
+            color: var(--main-color);
+            text-shadow: 1px 1px 1px var(--secondary-color);
+        }
+
+        .link-pendukung ul {
+            list-style-type: '> ';
+        }
+
+        .maps {
+            margin-top: 32px;
+        }
+
+        /* Social Media */
+        .sosmed {
+            display: flex;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            justify-content: center;
+        }
+
+        .sosmed-item {
+            margin-right: 8px;
+            width: 42px;
+            height: 42px;
+            background-color: white;
+            padding: 8px;
+            border-radius: 30px;
+            transition: 1s;
+            margin-top: -2px;
+            margin-bottom: 8px;
+        }
+
+        .sosmed-item:hover {
+            transform: translateY(-20px);
+            background-color: transparent;
+        }
+
+        .instagram img {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Subscribe */
+        .input-group .subs-button {
+            background-color: rgb(255, 0, 0);
+            color: var(--third-color);
+        }
+
+        /* Copyright */
+        .copyright h6 {
+            font-family: var(--secondary-font);
+            font-weight: bold;
+
+            color: var(--third-color);
+        }
+
+        hr {
+            background-color: var(--secondary-color);
+            height: 2px;
+        }
+
+
+
+
+
+        /* Responsive Breakpoints (Desktop Version) */
+
+        @media (min-width: 992px) {
+
+            /* Navbar */
+            .nav-item {
+                margin-right: 15px;
+            }
+
+            .nav-item:hover::after {
+                content: '';
+                display: block;
+                border-bottom: 3px solid var(--secondary-color);
+                width: 50%;
+                margin: auto;
+                padding-bottom: -7px;
+                margin-bottom: -3px;
+            }
+
+            /* Visi Misi */
+            .container .judul-dark h1 {
+                font-family: var(--main-font);
+                font-size: 30px;
+                font-weight: bold;
+                border-bottom: 2px solid var(--secondary-color);
+                width: 20%;
+                margin: auto;
+            }
+
+            /* Sejarah */
+            #sejarah {
+                height: 600px;
+            }
+
+            .container .judul-dark-1 {
+                width: 45%;
+            }
+
+            /* Footer */
+            .top-footer {
+                margin-top: 18px;
+                justify-content: start;
+            }
+
+            .top-footer img {
+                width: 100px;
+                margin-right: 10px;
+            }
+
+            .top-footer h3 {
+                font-weight: bold;
+                font-size: 32px;
+            }
+
+            .contact {
+                margin-top: 15px;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .contact h6 {
+                font-weight: 300;
+                font-size: 16px;
+            }
+
+            .contact span {
+                font-weight: bold;
+                font-size: 16px;
+            }
+
+            .link-terkait {
+                margin-right: 50%;
+            }
+        }
+    </style>
+
+
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <!-- Kotak Hubungi & Daftar Sekarang -->
+    <div class="sticky-icons">
+        <ul>
+            <li>
+                <a href="#">
+                    <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                        </svg></span>
+                    <span class="text">Daftar Sekarang</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-chat-square-dots" viewBox="0 0 16 16">
+                            <path
+                                d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-2.5a2 2 0 0 0-1.6.8L8 14.333 6.1 11.8a2 2 0 0 0-1.6-.8H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2.5a1 1 0 0 1 .8.4l1.9 2.533a1 1 0 0 0 1.6 0l1.9-2.533a1 1 0 0 1 .8-.4H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                            <path
+                                d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                        </svg></span>
+                    <span class="text">Hubungi Kami</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- AKhir Tombol -->
+    <!-- Header & Navbar -->
+    <nav class="navbar fixed-top z-index-2 navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">
+            <img src="http://markustangerang.sch.id/portal/assets/img/clients/ypmtok.png" width="50" height="50" alt="">
+            Sekolah Markus
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Beranda</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Tentang Kami<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Galeri</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Pendidikan
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Sekolah Dasar</a>
+                        <a class="dropdown-item" href="#">Sekolah Menengah Pertama</a>
+                        <a class="dropdown-item" href="#">Sekolah Menengah Akhir</a>
+                        <a class="dropdown-item" href="#">Sekolah Menengah Kejuruan</a>
+                        <a class="dropdown-item" href="#">SKH</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Profil
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Profil 1</a>
+                        <a class="dropdown-item" href="#">Profil 2</a>
+                        <a class="dropdown-item" href="#">Profil 2</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Ekskul</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Kontak</a>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+    </header>
+
+
+    <!-- Visi Misi -->
+    <section id="visi-misi">
+        <div class="container">
+            <div class="row text-center mb-3 mt-5 judul-dark">
+                <div class="col" data-aos="fade-down">
+                    <h1 class="mt-2">Visi & Misi</h1>
+                </div>
+            </div>
+            <div class="row justify-content-center border-visi-misi">
+                <div class="col-md-5" data-aos="fade-right" data-aos-offset="300" data-aos-duration="1400">
+                    <h5>Visi</h5>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati iusto ab porro unde amet
+                        explicabo reiciendis deleniti nostrum doloribus a. Cum id nisi quam maiores. Lorem ipsum dolor
+                        sit amet consectetur adipisicing elit. Natus, explicabo? Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Dolorum neque placeat animi!</p>
+                </div>
+                <div class="col-md-5" data-aos="fade-up" data-aos-offset="230" data-aos-duration="1200">
+                    <h5>Misi</h5>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati iusto ab porro unde amet
+                        explicabo reiciendis deleniti nostrum doloribus a. Cum id nisi quam maiores. Lorem ipsum dolor
+                        sit amet consectetur adipisicing elit. Natus, explicabo? Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Dolorum neque placeat animi!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sejarah -->
+    <section id="sejarah">
+        <div class="container">
+            <div class="row mb-3 mt-5 judul-dark-1">
+                <div class="col mt-3" data-aos="fade-down">
+                    <h1 class="mt-2">Sejarah</h1>
+                </div>
+            </div>
+            <div class="row text-center justify-content-center paragraf mb-5">
+                <div class="col-md-5 mt-3" data-aos="fade-right" data-aos-offset="300" data-aos-duration="1400">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ex facilis, veniam ab at, minima
+                        error commodi adipisci in voluptatem assumenda culpa ducimus modi molestias beatae eum iste
+                        labore id, et eius laboriosam quos. Harum obcaecati, modi iusto maiores quidem mollitia nihil
+                        earum ipsa repellat, natus laborum esse hic rem exercitationem itaque sed voluptates quam illum
+                        sit? Temporibus provident corrupti quas, neque amet perspiciatis veritatis dolores dignissimos
+                    </p>
+                </div>
+                <div class="col-md-5 mt-3" data-aos="fade-up" data-aos-offset="300" data-aos-duration="1400">
+                    <img src="https://source.unsplash.com/random/250x200" alt="">
+                </div>
+            </div>
+            <div class="row text-center paragraf-1 mt-5 mb-2">
+                <div class="col-md-5" data-aos="fade-down" data-aos-offset="300" data-aos-duration="1400">
+                    <img src="https://source.unsplash.com/random/250x200" alt="">
+                </div>
+                <div class="col-md-5 mt-4" data-aos="flip-right" data-aos-offset="300" data-aos-duration="1400">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ex facilis, veniam ab at, minima
+                        error commodi adipisci in voluptatem assumenda culpa ducimus modi molestias beatae eum iste
+                        labore id, et eius laboriosam quos. Harum obcaecati, modi iusto maiores quidem mollitia nihil
+                        earum ipsa repellat, natus laborum esse hic rem exercitationem itaque sed voluptates quam illum
+                        sit? Temporibus provident corrupti quas, neque amet perspiciatis veritatis dolores dignissimos
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="arti-logo">
+        <div class="container">
+            <div class="row text-center mb-3 mt-5 judul-dark">
+                <div class="col" data-aos="fade-down">
+                    <h1 class="mt-2">Arti Logo</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="logo-markus" data-aos="zoom-in" data-aos-offset="230" data-aos-duration="1200">
+                        <img src="http://markustangerang.sch.id/portal/assets/img/clients/ypmtok.png" alt="">
+                    </div>
+                </div>
+                <div class="col-md-6 info" data-aos="fade-down" data-aos-offset="230" data-aos-duration="1200">
+                    <ul>
+                        <li>Nama: Yayasan Perguruan Markus</li>
+                        <li>Nama: Yayasan Perguruan Markus</li>
+                        <li>Nama: Yayasan Perguruan Markus</li>
+                        <li>Nama: Yayasan Perguruan Markus</li>
+                        <li>Nama: Yayasan Perguruan Markus</li>
+                        <li>Nama: Yayasan Perguruan Markus</li>
+                        <li>Nama: Yayasan Perguruan Markus</li>
+                        <li>Nama: Yayasan Perguruan Markus</li>
+                        <li>Nama: Yayasan Perguruan Markus</li>
+                        <li>Nama: Yayasan Perguruan Markus</li>
+                        <li>Nama: Yayasan Perguruan Markus</li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kata Pengantar -->
+    <section id="kata-pengantar">
+        <div class="container">
+            <div class="row justify-content-center mt-3">
+                <div class="col-md-10 text-center" data-aos="flip-down" data-aos-offset="210" data-aos-duration="1200">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde veniam ducimus autem at enim est
+                        alias suscipit. Rem cum enim quasi aliquid odio alias, exercitationem est repellat a, velit
+                        veniam.upiditate, quas blanditiis quod sed sint. Quia quos recusandae sunt, enim veniam nesciunt
+                        error ratione explicabo ipsa rerum quaerat quibusdam qui delectus temporibus voluptatum optio
+                        vero! Aspernatur architecto dignissimos pariatur deleniti ab repellendus similique recusandae
+                        culpa! Consequatur magnam sed odit dolorum ad nemo eaque incidunt similique cumque aliquam
+                        eligendi adipisci placeat officia, totam, voluptate velit?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fasilitas -->
+    <section id="fasilitas">
+        <div class="container">
+            <div class="row text-center mb-3 mt-5 judul-dark-1">
+                <div class="col" data-aos="fade-down">
+                    <h1 class="mt-2">Fasilitas</h1>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="card mt-4" data-aos="zoom-out-right" data-aos-offset="210" data-aos-duration="1200">
+                        <img src=" https://source.unsplash.com/random/300x210" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h6 class="card-text text-center">Perpustakaan</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mt-4" data-aos="zoom-out-right" data-aos-offset="210" data-aos-duration="1200">
+                        <img src="https://source.unsplash.com/random/300x210" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h6 class="card-text text-center">Perpustakaan</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mt-4 " data-aos="zoom-out-right" data-aos-offset="210" data-aos-duration="1200">
+                        <img src=" https://source.unsplash.com/random/300x210" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h6 class="card-text text-center">Perpustakaan</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mt-4" data-aos="zoom-out-right" data-aos-offset="210" data-aos-duration="1200">
+                        <img src=" https://source.unsplash.com/random/300x210" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h6 class="card-text text-center">Perpustakaan</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mt-4" data-aos="zoom-out-right" data-aos-offset="210" data-aos-duration="1200">
+                        <img src=" https://source.unsplash.com/random/300x210" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h6 class="card-text text-center">Perpustakaan</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class=" container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="top-footer">
+                        <img src="http://markustangerang.sch.id/portal/assets/img/clients/ypmtok.png" alt="">
+                        <h3>Yayasan Perguruan <br> Markus Tangerang</h3>
+                    </div>
+                    <div class="contact">
+                        <h6> JL Thamrin km 45 Kebon Nanas <br> Kabupaten Tangerang</h6>
+                        <h6><span>Phone:</span> 080800808080 <br> <span>Email:</span> markus@gmail.com</h6>
+                    </div>
+                    <div class="link">
+                        <div class="link-terkait">
+                            <h6>Link Terkait</h6>
+                            <ul>
+                                <li><a href="">Smart SSP</a></li>
+                                <li><a href="">Smart SSP</a></li>
+                                <li><a href="">Smart SSP</a></li>
+                                <li><a href="">Smart SSP</a></li>
+                            </ul>
+                        </div>
+                        <div class="link-pendukung">
+                            <h6>Link Pendukung</h6>
+                            <ul>
+                                <li><a href="">Smart SSP</a></li>
+                                <li><a href="">Smart SSP</a></li>
+                                <li><a href="">Smart SSP</a></li>
+                                <li><a href="">Smart SSP</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 justify-content-center maps">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31730.904003840795!2d106.61312183955076!3d-6.215767199999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f9524bca5971%3A0xf52eefc3b11a5090!2sYAYASAN%20PERGURUAN%20MARKUS%20TANGERANG!5e0!3m2!1sid!2sid!4v1624079351967!5m2!1sid!2sid"
+                        width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="sosmed">
+                        <div class="facebook sosmed-item">
+                            <a href="">
+                                <img src="img/facebook.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="instagram sosmed-item">
+                            <a href="">
+                                <img src="img/instagram.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="youtube sosmed-item">
+                            <a href="">
+                                <img src="img/youtube.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="twitter sosmed-item">
+                            <a href="">
+                                <img src="img/twitter.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="whatsapp sosmed-item">
+                            <a href="">
+                                <img src="img/whatsapp.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="linkedin sosmed-item">
+                            <a href="">
+                                <img src="img/linkedin.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group mb-3">
+                        <input type="text text-subs" class="form-control" placeholder="Email Kamu" aria-label="email"
+                            aria-describedby="button-addon2">
+                        <div class="input-group-append">
+                            <button class="btn subs-button" type="button" id="button-addon2">Berlangganan</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row justify-content-center">
+                <div class="col-md-10 text-center">
+                    <div class="copyright">
+                        <h6>Copyright 2021 | Sekolah Markus</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script Banner Tentang kami -->
+    <script>
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('#header');
+            header.classList.toggle('sticky', window.scrollY > 10);
+        });
+        document.querySelector('.toggle').onclick = function () {
+            this.classList.toggle('active');
+        }
+
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true
+        });
+    </script>
+
+
+</body>
+
+</html>
